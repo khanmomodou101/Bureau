@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include bureau *.css
+recursive-include bureau *.csv
+recursive-include bureau *.html
+recursive-include bureau *.ico
+recursive-include bureau *.js
+recursive-include bureau *.json
+recursive-include bureau *.md
+recursive-include bureau *.png
+recursive-include bureau *.py
+recursive-include bureau *.svg
+recursive-include bureau *.txt
+recursive-exclude bureau *.pyc
