@@ -1,6 +1,6 @@
 {
  "aggregate_function_based_on": "exchange_rate",
- "color": "#ECAD4B",
+ "color": "#081654",
  "creation": "2023-05-07 20:10:10.462404",
  "docstatus": 0,
  "doctype": "Number Card",
@@ -12,7 +12,7 @@
  "is_public": 1,
  "is_standard": 1,
  "label": "Pound",
- "modified": "2023-05-18 03:07:08.567814",
+ "modified": "2023-10-26 15:32:45.657605",
  "modified_by": "Administrator",
  "module": "Bureau",
  "name": "Pound",

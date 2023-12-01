@@ -15,6 +15,9 @@
   "branch_code",
   "location",
   "account_balance",
+  "bureau_information_section",
+  "bureau_admin",
+  "bureau",
   "amended_from"
  ],
  "fields": [
@@ -75,11 +78,31 @@
    "precision": "2",
    "read_only": 1,
    "search_index": 1
+  },
+  {
+   "fetch_from": "bureau_admin.bureau",
+   "fieldname": "bureau",
+   "fieldtype": "Link",
+   "label": "Bureau",
+   "options": "Bureau"
+  },
+  {
+   "fieldname": "bureau_information_section",
+   "fieldtype": "Section Break",
+   "hidden": 1,
+   "label": "Bureau Information",
+   "read_only": 1
+  },
+  {
+   "fieldname": "bureau_admin",
+   "fieldtype": "Link",
+   "label": "Bureau Admin",
+   "options": "Bureau Admin"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-05-04 14:09:38.035530",
+ "modified": "2023-10-29 01:40:37.467096",
  "modified_by": "Administrator",
  "module": "Bureau",
  "name": "Branch",
@@ -99,14 +122,20 @@
    "write": 1
   },
   {
+   "read": 1,
+   "role": "Agent",
+   "select": 1
+  },
+  {
    "create": 1,
    "delete": 1,
    "email": 1,
    "export": 1,
+   "if_owner": 1,
    "print": 1,
    "read": 1,
    "report": 1,
-   "role": "Agent",
+   "role": "Bureau Admin",
    "share": 1,
    "write": 1
   }

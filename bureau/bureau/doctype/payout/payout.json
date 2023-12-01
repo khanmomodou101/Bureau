@@ -1,7 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "format:SE-PY-{####}",
+ "autoname": "format:PY-{####}",
  "creation": "2023-05-03 22:07:29.720817",
  "default_view": "List",
  "doctype": "DocType",
@@ -48,7 +48,6 @@
   {
    "fieldname": "reference_number",
    "fieldtype": "Data",
-   "in_list_view": 1,
    "label": "Reference Number"
   },
   {
@@ -80,7 +79,6 @@
   {
    "fieldname": "customer",
    "fieldtype": "Data",
-   "in_list_view": 1,
    "label": "Customer "
   },
   {
@@ -137,7 +135,9 @@
    "collapsible": 1,
    "fieldname": "cost_information_section",
    "fieldtype": "Section Break",
-   "label": "Cost Information"
+   "hidden": 1,
+   "label": "Cost Information",
+   "read_only": 1
   },
   {
    "fieldname": "agent_name",
@@ -160,6 +160,8 @@
    "fetch_from": "agent_name.full_name",
    "fieldname": "agent_full_name",
    "fieldtype": "Data",
+   "in_filter": 1,
+   "in_global_search": 1,
    "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "Agent"
@@ -186,7 +188,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-05-06 17:19:49.947203",
+ "modified": "2023-10-28 23:32:10.606817",
  "modified_by": "Administrator",
  "module": "Bureau",
  "name": "Payout",
