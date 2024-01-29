@@ -1,6 +1,6 @@
 ## Bureau Exchange Management System
 
-The **Bureau Exchange Management System **is a comprehensive Frappe-based application designed to empower local bureau exchange owners in the Gamba with the tools they need to efficiently manage their daily operations. This specialized system facilitates money transfers, currency buying and selling, branch management, and real-time exchange rate tracking.
+The Bureau Exchange Management System is a comprehensive Frappe-based application designed to empower local bureau exchange owners in the Gamba with the tools they need to efficiently manage their daily operations. This specialized system facilitates money transfers, currency buying and selling, branch management, and real-time exchange rate tracking.
 
 ## Features
 
