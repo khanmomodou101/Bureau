@@ -32,7 +32,4 @@ class Agent(Document):
            user_doc.save(ignore_permissions=True)
 
         def on_trash(self):
-                frappe.delete_doc("User", self.email)
-        # def on_update(self):
-        #       full_name = self.first_name + " " + self.last_name
-        #       self.db_set("full_name", full_name)
+                user  = frappe.db.set_value("User", self.email, "enabled", 0)

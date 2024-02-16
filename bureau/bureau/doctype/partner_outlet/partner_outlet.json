@@ -1,7 +1,6 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "field:bureau_id",
  "creation": "2023-10-28 15:52:06.732238",
  "default_view": "List",
  "doctype": "DocType",
@@ -9,17 +8,21 @@
  "engine": "InnoDB",
  "field_order": [
   "bureau_id",
+  "column_break_6yxme",
   "bureau_name",
+  "section_break_lnsux",
   "assigned_mto"
  ],
  "fields": [
   {
    "fieldname": "bureau_id",
-   "fieldtype": "Data",
+   "fieldtype": "Link",
    "label": "Bureau ID",
+   "options": "Bureau",
    "unique": 1
   },
   {
+   "fetch_from": "bureau_id.business_name",
    "fieldname": "bureau_name",
    "fieldtype": "Data",
    "label": "Bureau Name"
@@ -29,15 +32,22 @@
    "fieldtype": "Table",
    "label": "Assigned MTO",
    "options": "Partner MTO Item"
+  },
+  {
+   "fieldname": "column_break_6yxme",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_lnsux",
+   "fieldtype": "Section Break"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-10-28 16:15:52.337423",
+ "modified": "2024-02-07 20:09:00.014164",
  "modified_by": "Administrator",
  "module": "Bureau",
- "name": "Partner",
- "naming_rule": "By fieldname",
+ "name": "Partner Outlet",
  "owner": "Administrator",
  "permissions": [
   {

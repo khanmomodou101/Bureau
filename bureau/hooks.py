@@ -120,9 +120,9 @@ app_license = "MIT"
 #	"daily": [
 #		"bureau.tasks.daily"
 #	],
-#	"hourly": [
-#		"bureau.tasks.hourly"
-#	],
+	"hourly": [
+		"bureau.api.exchange_rate"
+	]
 #	"weekly": [
 #		"bureau.tasks.weekly"
 #	],

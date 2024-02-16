@@ -1,5 +1,22 @@
 import frappe
 from frappe import auth
+import requests
+
+#set exchange rate for every 8 hours
+@frappe.whitelist()
+def exchange_rate():
+    docs = frappe.get_list("Currency", filters={
+        'enabled': 1
+    })
+    api_key = 'a7a15842901bad36bb927098'
+
+    for doc in docs:
+        url = f"https://v6.exchangerate-api.com/v6/{api_key}/pair/{doc.name}/GMD"
+        response = requests.get(url).json()
+        rate = response['conversion_rate']
+        frappe.db.set_value('Currency', doc.name, "exchange_rate", rate)
+        frappe.db.commit()
+
 
 @frappe.whitelist( allow_guest=True )
 def login(usr, pwd):
