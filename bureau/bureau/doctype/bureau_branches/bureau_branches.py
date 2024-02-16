@@ -1,8 +1,8 @@
-# Copyright (c) 2023, Momodou khan and contributors
+# Copyright (c) 2024, Momodou khan and contributors
 # For license information, please see license.txt
 
 # import frappe
 from frappe.model.document import Document
 
-class AccountType(Document):
+class BureauBranches(Document):
 	pass

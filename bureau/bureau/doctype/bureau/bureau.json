@@ -29,7 +29,11 @@
   "phone",
   "profile_photo_column",
   "bio",
-  "mobile_no"
+  "mobile_no",
+  "branches_tab",
+  "branches",
+  "agents_tab",
+  "agents"
  ],
  "fields": [
   {
@@ -154,11 +158,34 @@
    "fieldtype": "Data",
    "label": "    Mobile No",
    "reqd": 1
+  },
+  {
+   "fieldname": "branches_tab",
+   "fieldtype": "Tab Break",
+   "label": "Branches"
+  },
+  {
+   "fieldname": "branches",
+   "fieldtype": "Table",
+   "label": "Branches",
+   "options": "Bureau Branches"
+  },
+  {
+   "fieldname": "agents_tab",
+   "fieldtype": "Tab Break",
+   "label": "Agents"
+  },
+  {
+   "fieldname": "agents",
+   "fieldtype": "Table",
+   "label": "Agents",
+   "options": "Bureau Agents",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-10-29 04:06:17.451904",
+ "modified": "2024-02-16 04:30:06.550939",
  "modified_by": "Administrator",
  "module": "Bureau",
  "name": "Bureau",

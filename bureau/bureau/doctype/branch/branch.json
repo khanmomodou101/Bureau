@@ -1,14 +1,14 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "field:name1",
+ "autoname": "field:branch_name",
  "creation": "2023-04-28 19:03:12.810318",
  "default_view": "List",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "name1",
+  "branch_name",
   "phone_number",
   "email",
   "column_break_q8ohw",
@@ -21,13 +21,6 @@
   "amended_from"
  ],
  "fields": [
-  {
-   "fieldname": "name1",
-   "fieldtype": "Data",
-   "label": "Name",
-   "reqd": 1,
-   "unique": 1
-  },
   {
    "fieldname": "location",
    "fieldtype": "Data",
@@ -89,7 +82,6 @@
   {
    "fieldname": "bureau_information_section",
    "fieldtype": "Section Break",
-   "hidden": 1,
    "label": "Bureau Information",
    "read_only": 1
   },
@@ -98,11 +90,18 @@
    "fieldtype": "Link",
    "label": "Bureau Admin",
    "options": "Bureau Admin"
+  },
+  {
+   "fieldname": "branch_name",
+   "fieldtype": "Data",
+   "label": "Branch Name",
+   "reqd": 1,
+   "unique": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-10-29 01:40:37.467096",
+ "modified": "2024-02-16 05:06:25.963485",
  "modified_by": "Administrator",
  "module": "Bureau",
  "name": "Branch",

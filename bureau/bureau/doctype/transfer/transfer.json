@@ -27,8 +27,6 @@
   "column_break_ofk7k",
   "cost_information_section",
   "agent_name",
-  "branch",
-  "agent_full_name",
   "amended_from"
  ],
  "fields": [
@@ -146,21 +144,6 @@
    "report_hide": 1
   },
   {
-   "fetch_from": "agent_name.branch",
-   "fieldname": "branch",
-   "fieldtype": "Link",
-   "label": "Branch",
-   "options": "Branch"
-  },
-  {
-   "fetch_from": "agent_name.full_name",
-   "fieldname": "agent_full_name",
-   "fieldtype": "Data",
-   "in_list_view": 1,
-   "in_standard_filter": 1,
-   "label": "Agent"
-  },
-  {
    "fieldname": "amended_from",
    "fieldtype": "Link",
    "label": "Amended From",
@@ -179,7 +162,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-05-06 17:20:11.989964",
+ "modified": "2024-02-16 04:36:47.031921",
  "modified_by": "Administrator",
  "module": "Bureau",
  "name": "Transfer",

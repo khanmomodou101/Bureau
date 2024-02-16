@@ -1,7 +1,7 @@
-// Copyright (c) 2023, Momodou khan and contributors
+// Copyright (c) 2024, Momodou khan and contributors
 // For license information, please see license.txt
 
-frappe.ui.form.on('Account Type', {
+frappe.ui.form.on('Transactions', {
 	// refresh: function(frm) {
 
 	// }

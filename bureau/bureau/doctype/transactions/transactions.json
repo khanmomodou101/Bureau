@@ -1,0 +1,117 @@
+{
+ "actions": [],
+ "autoname": "autoincrement",
+ "creation": "2024-02-16 03:30:59.050623",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "date",
+  "transaction_type",
+  "mto",
+  "bureau",
+  "branch",
+  "agent",
+  "amount"
+ ],
+ "fields": [
+  {
+   "default": "Today",
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Date"
+  },
+  {
+   "fieldname": "transaction_type",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Transaction Type"
+  },
+  {
+   "fieldname": "mto",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "MTO"
+  },
+  {
+   "fieldname": "agent",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Agent",
+   "options": "Agent"
+  },
+  {
+   "fieldname": "bureau",
+   "fieldtype": "Link",
+   "label": "Bureau",
+   "options": "Bureau"
+  },
+  {
+   "fieldname": "amount",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Amount"
+  },
+  {
+   "fieldname": "branch",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Branch",
+   "options": "Branch"
+  }
+ ],
+ "in_create": 1,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-02-16 05:30:39.095019",
+ "modified_by": "Administrator",
+ "module": "Bureau",
+ "name": "Transactions",
+ "naming_rule": "Autoincrement",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Bureau Admin",
+   "share": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [
+  {
+   "color": "Green",
+   "title": "Payout"
+  },
+  {
+   "color": "Blue",
+   "title": "Send Money"
+  },
+  {
+   "color": "Orange",
+   "title": "Buy Currency"
+  },
+  {
+   "color": "Yellow",
+   "title": "Sell Currency"
+  }
+ ]
+}

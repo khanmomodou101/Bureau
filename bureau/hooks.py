@@ -113,7 +113,7 @@ app_license = "MIT"
 # Scheduled Tasks
 # ---------------
 
-# scheduler_events = {
+scheduler_events = {
 #	"all": [
 #		"bureau.tasks.all"
 #	],
@@ -122,14 +122,14 @@ app_license = "MIT"
 #	],
 	"hourly": [
 		"bureau.api.exchange_rate"
-	]
+	],
 #	"weekly": [
 #		"bureau.tasks.weekly"
 #	],
 #	"monthly": [
 #		"bureau.tasks.monthly"
 #	],
-# }
+}
 
 # Testing
 # -------
