@@ -65,7 +65,7 @@
  "modified": "2024-02-16 07:06:03.868088",
  "modified_by": "Administrator",
  "module": "Bureau",
- "name": "Account",
+ "name": "Account Vault",
  "name_case": "UPPER CASE",
  "nsm_parent_field": "parent_account_type",
  "owner": "Administrator",

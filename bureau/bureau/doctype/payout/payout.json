@@ -135,25 +135,21 @@
    "collapsible": 1,
    "fieldname": "cost_information_section",
    "fieldtype": "Section Break",
-   "label": "Cost Information",
-   "read_only": 1
+   "label": "Cost Information"
   },
   {
    "fieldname": "agent_name",
    "fieldtype": "Link",
-   "hidden": 1,
    "label": "Agent",
    "options": "Agent",
    "print_hide": 1,
    "report_hide": 1
   },
   {
-   "fetch_from": "agent_name.branch",
    "fieldname": "branch",
    "fieldtype": "Link",
    "label": "Branch",
-   "options": "Branch",
-   "read_only": 1
+   "options": "Branch"
   },
   {
    "fetch_from": "agent_name.full_name",
@@ -187,7 +183,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-02-16 03:53:13.324995",
+ "modified": "2024-02-23 05:28:19.081648",
  "modified_by": "Administrator",
  "module": "Bureau",
  "name": "Payout",

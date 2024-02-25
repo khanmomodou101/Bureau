@@ -10,11 +10,13 @@
   "date",
   "opening_time",
   "column_break_glrxz",
-  "status",
+  "opening_balance",
+  "closing_balance",
   "closing_time",
   "section_break_qvwkb",
-  "branches",
-  "amended_from"
+  "transactions",
+  "amended_from",
+  "status"
  ],
  "fields": [
   {
@@ -27,7 +29,7 @@
    "fieldname": "status",
    "fieldtype": "Select",
    "label": "Status",
-   "options": "Draft\nOpen\nClosed",
+   "options": "\nDraft\nOpen\nClosed\nCancelled",
    "read_only": 1
   },
   {
@@ -52,24 +54,34 @@
    "read_only": 1
   },
   {
-   "fieldname": "branches",
-   "fieldtype": "Table",
-   "label": "Branches",
-   "options": "Session Item"
-  },
-  {
    "fieldname": "column_break_glrxz",
    "fieldtype": "Column Break"
   },
   {
    "fieldname": "section_break_qvwkb",
    "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "opening_balance",
+   "fieldtype": "Currency",
+   "label": "Opening Balance"
+  },
+  {
+   "fieldname": "closing_balance",
+   "fieldtype": "Currency",
+   "label": "Closing Balance"
+  },
+  {
+   "fieldname": "transactions",
+   "fieldtype": "Table",
+   "label": "Transactions",
+   "options": "Transactions"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-10-30 16:30:39.528741",
+ "modified": "2024-02-23 06:30:14.538775",
  "modified_by": "Administrator",
  "module": "Bureau",
  "name": "Session",

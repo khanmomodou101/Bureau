@@ -43,3 +43,42 @@ def generate_keys(user):
     user_details.save()
 
     return api_secret
+@frappe.whitelist()
+def exchange_rate():
+    docs = frappe.get_list("Currency", filters={
+        'enabled': 1
+    })
+    api_key = 'a7a15842901bad36bb927098'
+
+    for doc in docs:
+        url = f"https://v6.exchangerate-api.com/v6/{api_key}/pair/{doc.name}/GMD"
+        response = requests.get(url).json()
+        rate = response['conversion_rate']
+        frappe.db.set_value('Currency', doc.name, "exchange_rate", rate)
+        frappe.db.commit()
+
+    #create chart of account if branch is created
+def create_chart_of_account(doc, method=None):
+
+    if not frappe.db.exists("Account", f'{doc.branch_name} - {frappe.db.get_value("Bureau", doc.bureau, "abbr")}'):
+        chart_of_accounts = frappe.get_doc({
+            "doctype": "Account",
+            "company": frappe.db.get_value("Bureau", doc.bureau, "business_name"),
+            "account_name": doc.branch_name,
+            'parent_account': f'Cash In Hand - {frappe.db.get_value("Bureau", doc.bureau, "abbr")}',
+            "account_type": "Cash",
+            "root_type": "Asset",
+            "is_group": 0,
+            "account_currency": "GMD",
+           
+        })
+        chart_of_accounts.save(ignore_permissions=True)
+
+    bureau = frappe.get_doc("Bureau", doc.bureau)
+    bureau.append('branches', {
+        'branch': doc.branch_name,
+        'branch_location': doc.branch_location
+    })
+    bureau.save()
+
+

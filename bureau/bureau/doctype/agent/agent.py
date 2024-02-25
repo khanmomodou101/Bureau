@@ -7,6 +7,7 @@ from frappe.model.document import Document
 class Agent(Document):
         def validate(self):
                 self.validate_user()
+                self.create_employee()
         def validate_user(self):
             """Create a System user for Agent creation if not already exists"""
             if not frappe.db.exists("User", self.email):
@@ -32,4 +33,20 @@ class Agent(Document):
            user_doc.save(ignore_permissions=True)
 
         def on_trash(self):
-                user  = frappe.db.set_value("User", self.email, "enabled", 0)
+                user = frappe.db.set_value("User", self.email, "enabled", 0)
+                
+        #create an employee for the agent
+        def create_employee(self):
+            if not frappe.db.exists("Employee", self.email):
+                employee = frappe.get_doc({
+                    "doctype": "Employee",
+                    "employee_name": self.first_name,
+                    "user_id": self.email,
+                    "status": "Active",
+                    "designation": "Agent",
+                    "date_of_joining": self.date_of_joining,
+                    "date_of_birth": self.date_of_birth
+                })
+                employee.insert()
+                frappe.msgprint("Employee created successfully")
+        

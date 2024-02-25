@@ -60,3 +60,17 @@ def generate_keys(user):
     user_details.save()
 
     return api_secret
+
+#create chart of account if branch is created
+def create_chart_of_account(doc):
+    if not frappe.db.exists("Chart of Accounts", doc.branch_name):
+        chart_of_accounts = frappe.get_doc({
+            "doctype": "Chart of Accounts",
+            "company": doc.company,
+            "account_name": self.branch_name,
+            "account_type": "Cash",
+            "is_group": 0,
+            "account_currency": "GMD",
+           
+        })
+        chart_of_accounts.save(ignore_permissions=True)

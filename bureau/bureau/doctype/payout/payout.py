@@ -10,21 +10,21 @@ class Payout(Document):
     def validate(self):
         #check if there is enough cash in the cash account:
         branch = frappe.get_doc("Branch", self.branch)
-        if branch.account_balance < self.amount:
-            frappe.throw("There is Not Enough Cash in This Branch ")
+        # if branch.account_balance < self.amount:
+        #     frappe.throw("There is Not Enough Cash in This Branch ")
         
     def on_submit(self):
         #update account balance in cash account
-        cash_account = frappe.get_doc('Account Type', 'GMD')
-        updated_cash_account = cash_account.account_balance - self.amount
-        cash_account.db_set('account_balance', updated_cash_account)
+        self.create_journal_entry()
+        # updated_cash_account = cash_account.account_balance - self.amount
+        # cash_account.db_set('account_balance', updated_cash_account)
 
         self.create_transaction()
         #append branches to to
         #update cash acocunt to specific branch
-        branch = frappe.get_doc("Branch", self.branch)
-        updated_amount = branch.account_balance - self.amount
-        branch.db_set('account_balance', updated_amount)
+        # branch = frappe.get_doc("Branch", self.branch)
+        # updated_amount = branch.account_balance - self.amount
+        # branch.db_set('account_balance', updated_amount)
     
     #create a transaction after submit
     def create_transaction(self):
@@ -40,4 +40,26 @@ class Payout(Document):
             "date": self.date
         }).insert()
         frappe.msgprint(("Transaction Created"))
-        
+    
+    #create journal entry
+    def create_journal_entry(self):
+        branch = frappe.get_doc("Branch", self.branch)
+        journal_entry = frappe.get_doc({
+            "doctype": "Journal Entry",
+            "voucher_type": "Journal Entry",
+            "company": frappe.db.get_value("Bureau", branch.bureau, "business_name"),
+            "posting_date": self.date,
+            "accounts": [
+                {
+                    "account": f'{branch.branch_name} - {frappe.db.get_value("Bureau", branch.bureau, "abbr")}',
+                    "credit_in_account_currency": self.amount
+                },
+                {
+                    "account": f'Write Off - {frappe.db.get_value("Bureau", branch.bureau, "abbr")}',
+                    "debit_in_account_currency": self.amount,
+                }
+            ]
+        })
+        journal_entry.save(ignore_permissions=True)
+        journal_entry.submit()
+        frappe.msgprint("Journal Entry Created")
